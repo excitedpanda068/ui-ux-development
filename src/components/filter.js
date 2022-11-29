@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { styled } from "@mui/material/styles";
 
-import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 
 import {
