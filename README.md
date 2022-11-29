@@ -11,11 +11,17 @@ The goal of this application is to display information about the biggest tech co
 
 ### Usability Principles Considered
 
+
+
 ### Organization of Components
+
+App.js 
 
 ### How Data is Passed Down Through Components
 
 ### How the User Triggers State Changes
+
+When the user 
 
 
 
