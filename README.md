@@ -5,6 +5,8 @@ If you used the stencil code, this is `https://<your GitHub username>.github.io/
 
 ### Goal and Value of the Application
 
+The goal of this application is to display information about the biggest tech companies in the stock market. 
+
 ### Usability Principles Considered
 
 ### Organization of Components
@@ -12,4 +14,7 @@ If you used the stencil code, this is `https://<your GitHub username>.github.io/
 ### How Data is Passed Down Through Components
 
 ### How the User Triggers State Changes
+
+
+
 
