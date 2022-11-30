@@ -1,10 +1,8 @@
+import { useState } from "react";
 
-import * as React from "react";
-
+// Material Imports
 import { styled } from "@mui/material/styles";
-
 import CloseIcon from "@mui/icons-material/Close";
-
 import {
   Dialog,
   DialogTitle,
@@ -13,12 +11,12 @@ import {
   IconButton,
   Typography,
   Button,
+  Slider
 } from "@mui/material";
-
-import { Slider } from "@mui/material";
 import { Stack } from "@mui/system";
 
-const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+// Apply padding to dialog
+const CustomDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
     padding: theme.spacing(2),
   },
@@ -27,7 +25,9 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-function BootstrapDialogTitle(props) {
+
+// Use custom title for the dialog
+function CustomDialogTitle(props) {
   const { children, onClose, ...other } = props;
 
   return (
@@ -51,13 +51,18 @@ function BootstrapDialogTitle(props) {
   );
 }
 
-export default function CustomizedDialogs(props) {
-  const [open, setOpen] = React.useState(false);
+// Filter component
+export default function Filter(props) {
 
-  const [marketVal, setMarketVal] = React.useState(2500);
+  // Open and close dialog
+  const [open, setOpen] = useState(false);
 
-  const [employeeVal, setEmployeeVal] = React.useState(2000);
+  // Maintain filter values state to allow the user to reset the filters
+  const [marketVal, setMarketVal] = useState(2500);
+  const [employeeVal, setEmployeeVal] = useState(2000);
 
+
+  // Open and close the dialog
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -67,6 +72,9 @@ export default function CustomizedDialogs(props) {
 
   return (
     <div>
+      {/**
+       * Dialog button
+       */}
       <Button
         variant="outlined"
         onClick={handleClickOpen}
@@ -84,24 +92,25 @@ export default function CustomizedDialogs(props) {
       >
         Filter
       </Button>
-      <BootstrapDialog
+      {/**
+       * Displayed when dialog button is pressed
+       */}
+      <CustomDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
       >
-        <BootstrapDialogTitle
-          id="customized-dialog-title"
-          onClose={handleClose}
-        >
+        {/**
+         * Title of dialog
+         */}
+        <CustomDialogTitle id="customized-dialog-title" onClose={handleClose}>
           Filter
-        </BootstrapDialogTitle>
-        <DialogContent dividers>
-          {/* <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </Typography> */}
+        </CustomDialogTitle>
 
+        {/**
+         * Filter options
+         */}
+        <DialogContent dividers>
           <Stack width="20vw">
             <Typography>Market Cap (Billions)</Typography>
             <Slider
@@ -134,6 +143,9 @@ export default function CustomizedDialogs(props) {
           </Stack>
         </DialogContent>
 
+        {/**
+         * Resets the filter values
+         */}
         <DialogActions>
           <Button
             autoFocus
@@ -147,7 +159,7 @@ export default function CustomizedDialogs(props) {
             Clear
           </Button>
         </DialogActions>
-      </BootstrapDialog>
+      </CustomDialog>
     </div>
   );
 }

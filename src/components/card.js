@@ -11,9 +11,13 @@ import {
 
 import { Box, Stack } from "@mui/system";
 
+// React Icons
 import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
+// Constants
 import { Green, Blue, FontFamily } from "../Constants";
 
+
+// Card that display stock info
 export default function MediaCard(props) {
 
     // Number of lines to display for description
@@ -44,12 +48,18 @@ export default function MediaCard(props) {
   return (
     <Card sx={{ maxWidth: 345, margin: 3, bgcolor: "#2e2e2e" }}>
       <CardContent sx={{ bgcolor: "#2e2e2e" }}>
+        {/**
+         * Container for card header
+         */}
         <Stack
           direction="row"
           justifyContent={"space-between"}
           alignItems="center"
           marginBottom={2}
         >
+          {/**
+           * Profile picture for stock
+           */}
           <Avatar
             src={props.img}
             alt="Avatar"
@@ -62,6 +72,9 @@ export default function MediaCard(props) {
             variant={"circle"}
           ></Avatar>
 
+          {/**
+           * Name and ticker
+           */}
           <Stack>
             <Typography
               sx={{ color: "white" }}
@@ -81,6 +94,9 @@ export default function MediaCard(props) {
             </Typography>
           </Stack>
 
+          {/**
+           * Daily percent change
+           */}
           <Box sx={{ margin: "2px" }}>
             <Typography
               sx={{ color: props.percentChange > 0 ? Green : Blue }}
@@ -90,7 +106,10 @@ export default function MediaCard(props) {
             </Typography>
           </Box>
         </Stack>
-
+        
+        {/**
+         * Description
+         */}
         <Typography
           onClick={() => (lines == 3 ? setLines(100) : setLines(3))}
           variant="body2"
@@ -107,6 +126,9 @@ export default function MediaCard(props) {
           {props.description}
         </Typography>
 
+          {/**
+           * Market cap
+           */}
         <Typography
           variant="body1"
           color="text.secondary"
@@ -120,6 +142,10 @@ export default function MediaCard(props) {
         >
           {`Market Cap: ${props.marketcap.toFixed(2)}B`}
         </Typography>
+
+        {/**
+         * Employees
+         */}
         <Typography
           fontFamily={FontFamily[0]}
           variant="body1"
@@ -134,6 +160,10 @@ export default function MediaCard(props) {
           {`Employees: ${props.employees}K`}
         </Typography>
       </CardContent>
+
+      {/**
+       * Add button
+       */}
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites" onClick={() => HandleAdd()}>
           {props.displayLib ? (

@@ -3,9 +3,7 @@
   background-color: black;
 }
 
-
-
-.App-header {
+main {
   background-color: black;
   min-height: 100vh;
   display: flex;
@@ -25,6 +23,7 @@
   justify-content: space-between;
   align-items: center;
   width: 90%;
+  margin-bottom: 50px
 }
 
 .Filter-button {
@@ -64,13 +63,3 @@
   margin-top: 5%;
 }
 
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

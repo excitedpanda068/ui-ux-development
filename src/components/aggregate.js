@@ -53,6 +53,9 @@ export default function Aggregate(props) {
 
   return (
     <>
+    {/**
+     * If the library should be displayed, show the cummalative market cap, average daily percent change
+     */}
       {props.displayLib ? (
         <Stack>
           <Typography variant="h4" fontFamily={FontFamily[3]}>
@@ -65,7 +68,10 @@ export default function Aggregate(props) {
       ) : (
         <></>
       )}
-
+      {/**
+       * If the library should be displayed, use the stocks in the users library, otherwise should all stocks
+       * using the filters and sorting method
+       */}
       <div id="stocks-container">
         {props.displayLib ? (
           props.library
@@ -92,9 +98,11 @@ export default function Aggregate(props) {
         ) : props.StockData.length === 0 ? (
           <Bars />
         ) : (
+          // Sort the stock data by name
           props.StockData.sort(compare)
             .filter(
               (stock) =>
+              // Filter the stocks by the market cap and employees
                 stock.results.market_cap / 1000000000 <=
                   props.filterMarketCap &&
                 stock.results.total_employees / 1000 <= props.filterEmployees
@@ -102,14 +110,13 @@ export default function Aggregate(props) {
             .map((stock, index) => (
               <MediaCard
                 key={index}
-                logo={
-                  stock.results.branding ? stock.results.branding.logo_url : ""
-                }
                 name={stock.name}
                 ticker={stock.results.ticker}
                 percentChange={stock.change}
                 description={stock.results.description}
+                // Convert market cap to billions
                 marketcap={stock.results.market_cap / 1000000000}
+                // Convert employees to thousands
                 employees={(stock.results.total_employees / 1000).toFixed(0)}
                 setLibrary={props.setLibrary}
                 displayLib={props.displayLib}
