@@ -25,4 +25,4 @@ App.js contains the library and stock data state. When the app mounts the stock 
 When the user presses the add button or remove button on the stock card the library state in App.js is updated by the aggregator component to reflect the changes made by the user. When the filter options are changed by the user, filter states in App.js component are updated by the filter component in the header component and passed passed back down into the aggregator component as props. When the user presses the stocks or library button the displayLib state in App.js is updated in the options component and passed into the aggregate component as props which either displays the stocks in the users library or the list of all the stocks in the StockData state.
 
 
-
+### I used parts of the custom dialog from the mui website to create the filter dialog and parts of the card example from the website to create the stock cards
