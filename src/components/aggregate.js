@@ -58,10 +58,10 @@ export default function Aggregate(props) {
      */}
       {props.displayLib ? (
         <Stack>
-          <Typography variant="h4" fontFamily={FontFamily[3]}>
+          <Typography variant="subtitle" fontFamily={FontFamily[3]}>
             {`Cummulative Market Cap: ${CalculateTotalMarketCap()}B`}
           </Typography>
-          <Typography variant="h4" fontFamily={FontFamily[3]}>
+          <Typography variant="subtitle" fontFamily={FontFamily[3]}>
             {`Average Daily Change: ${CalculateAveragePercentChange()}%`}
           </Typography>
         </Stack>

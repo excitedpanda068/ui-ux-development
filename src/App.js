@@ -83,7 +83,7 @@ function App() {
         {/**
          * Button for user to toggle between all stocks and library
          */}
-        <Options setDisplayLib={setDisplayLib} />
+        <Options setDisplayLib={setDisplayLib} displayLib = {displayLib}/>
 
         {/**
          * Aggregate section, displays the list of stocks or the users library

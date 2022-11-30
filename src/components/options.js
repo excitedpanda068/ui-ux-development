@@ -22,12 +22,12 @@ export default function Options(props) {
         onClick={() => props.setDisplayLib(false)}
         sx={{
             // Change color if selected
-          color: props.displayLib ? Green : "black",
-          bgcolor: props.displayLib ? "black" : Green,
+          color: Green,
+          borderBottom: props.displayLib ? "none" : "2px solid green",
           "&:hover": {
-            backgroundColor: props.displayLib ? Green : "black",
-            color: props.displayLib ? "black" : Green,
+            color: "black",
             justifyContent: "center",
+            backgroundColor: Green
           },
         }}
       >
@@ -43,8 +43,8 @@ export default function Options(props) {
         onClick={() => props.setDisplayLib(true)}
         sx={{
             // Change color is selected
-          color: props.displayLib ? "black" : Green,
-          bgcolor: props.displayLib ? Green : "black",
+          color: Green,
+          borderBottom: props.displayLib ? "2px solid green" : "none",
           "&:hover": {
             backgroundColor: Green,
             color: "black",

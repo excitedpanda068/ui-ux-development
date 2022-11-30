@@ -14,6 +14,7 @@ import {
   Slider
 } from "@mui/material";
 import { Stack } from "@mui/system";
+import { Green } from "../Constants";
 
 // Apply padding to dialog
 const CustomDialog = styled(Dialog)(({ theme }) => ({
@@ -148,6 +149,7 @@ export default function Filter(props) {
          */}
         <DialogActions>
           <Button
+          sx = {{color: Green}}
             autoFocus
             onClick={() => {
               props.setFilterEmployees(2000);
