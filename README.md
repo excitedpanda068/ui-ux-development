@@ -26,3 +26,6 @@ When the user presses the add button or remove button on the stock card the libr
 
 
 ### I used parts of the custom dialog from the mui website to create the filter dialog and parts of the card example from the website to create the stock cards
+
+
+### I had to include the env file plz don't abuse my api key
